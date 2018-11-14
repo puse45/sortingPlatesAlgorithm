@@ -37,9 +37,10 @@ vector<StructA> licensePlateSort::vectorsortPlate(vector<StructA> list){
     set_intersection(list.begin(), list.end(),
                      bStructs.begin(), bStructs.end(),
                      back_inserter(intersection), cmp);
-//    copy(intersection.begin(), intersection.end(),
-//         ostream_iterator<StructA>(cout, ""));
+    //    copy(intersection.begin(), intersection.end(),
+    //         ostream_iterator<StructA>(cout, ""));
 
     return intersection;
+
 
 }

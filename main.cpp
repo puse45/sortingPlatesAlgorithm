@@ -8,7 +8,7 @@ int main()
 {
 //    Compare cmp;
     vector<StructA> aStructs;
-    vector<StructA> results;
+    vector<StructA>* results = new vector<StructA>;
     aStructs = {
             {"KCB456H", 40,"home/pictures/lp1.jpg"},
             {"KCB456H", 43,"home/pictures/lp2.jpg"},
@@ -22,16 +22,16 @@ int main()
             {"KBX528K", 79,"home/pictures/lp9.jpg"},
             {"KBX528K", 90,"home/pictures/lp10.jpg"},
             {"KBM489Z", 84,"home/pictures/lp11.jpg"},
-            {"KBM489Z", 84,"home/pictures/lp11.jpg"},
+            {"KBM489Z", 84,"home/pictures/lp12.jpg"},
     };
 
-    licensePlateSort lps;
-    results = lps.vectorsortPlate(aStructs);
+    licensePlateSort* lps = new licensePlateSort;
+    *results = lps->vectorsortPlate(aStructs);
 
-    for(auto r = results.begin(); r!=results.end(); ++r){
-        cout << "{" << r->licensePlate << " " << r->confidenceLvl << " " << r->imagePath << " } " << endl;
+    for(auto r = results->begin(); r!=results->end(); ++r){
+        cout << "{" << r->licensePlate << ", " << r->confidenceLvl << ", " << r->imagePath << "} " << endl;
     }
-
+    delete  lps,results;
     return 0;
 }
 
