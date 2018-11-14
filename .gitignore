@@ -1,0 +1,6 @@
+cmake-build-debug/
+test*
+*.pro
+*.pdf
+Debug/
+.idea/*
